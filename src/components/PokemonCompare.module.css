@@ -1,0 +1,268 @@
+/* type color vars */
+.typeColors {
+  --type-color-normal: hsl(63, 18%, 57%);
+  --type-color-fire: hsl(26, 85%, 56%);
+  --type-color-water: hsl(221, 84%, 66%);
+  --type-color-electric: hsl(48, 93%, 50%);
+  --type-color-grass: hsl(97, 54%, 45%);
+  --type-color-ice: hsl(178, 49%, 55%);
+  --type-color-fighting: hsl(2, 66%, 46%);
+  --type-color-poison: hsl(301, 45%, 44%);
+  --type-color-ground: hsl(43, 68%, 55%);
+  --type-color-flying: hsl(256, 82%, 65%);
+  --type-color-psychic: hsl(342, 93%, 60%);
+  --type-color-bug: hsl(67, 75%, 38%);
+  --type-color-rock: hsl(50, 54%, 46%);
+  --type-color-ghost: hsl(266, 27%, 47%);
+  --type-color-dragon: hsl(258, 98%, 60%);
+  --type-color-steel: hsl(240, 16%, 65%);
+  --type-color-dark: hsl(24, 23%, 36%);
+  --type-color-fairy: hsl(331, 49%, 65%);
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.drawer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  max-width: 520px;
+  max-height: 80vh;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  box-shadow: var(--shadow-xl);
+  z-index: 900;
+  overflow-y: auto;
+  animation: slideInRight var(--transition-normal) forwards;
+}
+
+@media (min-width: 640px) {
+  .drawer {
+    bottom: 24px;
+    right: 24px;
+    border-radius: var(--radius-xl);
+    max-height: 85vh;
+  }
+}
+
+.drawerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-secondary);
+  z-index: 1;
+}
+
+.drawerTitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.closeBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  background-color: var(--bg-tertiary);
+  transition: all var(--transition-fast);
+}
+
+.closeBtn:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+}
+
+.compareGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.slot {
+  padding: 20px;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.slot:last-child {
+  border-right: none;
+}
+
+.emptySlot {
+  border: 2px dashed var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  gap: 8px;
+}
+
+.pokemonHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.pokemonImage {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+}
+
+.pokemonName {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.pokemonTypes {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.typeBadge {
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.typeBadge[data-type="normal"] { background-color: var(--type-color-normal); }
+.typeBadge[data-type="fire"] { background-color: var(--type-color-fire); }
+.typeBadge[data-type="water"] { background-color: var(--type-color-water); }
+.typeBadge[data-type="electric"] { background-color: var(--type-color-electric); color: #222; }
+.typeBadge[data-type="grass"] { background-color: var(--type-color-grass); }
+.typeBadge[data-type="ice"] { background-color: var(--type-color-ice); color: #222; }
+.typeBadge[data-type="fighting"] { background-color: var(--type-color-fighting); }
+.typeBadge[data-type="poison"] { background-color: var(--type-color-poison); }
+.typeBadge[data-type="ground"] { background-color: var(--type-color-ground); color: #222; }
+.typeBadge[data-type="flying"] { background-color: var(--type-color-flying); }
+.typeBadge[data-type="psychic"] { background-color: var(--type-color-psychic); }
+.typeBadge[data-type="bug"] { background-color: var(--type-color-bug); }
+.typeBadge[data-type="rock"] { background-color: var(--type-color-rock); }
+.typeBadge[data-type="ghost"] { background-color: var(--type-color-ghost); }
+.typeBadge[data-type="dragon"] { background-color: var(--type-color-dragon); }
+.typeBadge[data-type="steel"] { background-color: var(--type-color-steel); color: #222; }
+.typeBadge[data-type="dark"] { background-color: var(--type-color-dark); }
+.typeBadge[data-type="fairy"] { background-color: var(--type-color-fairy); }
+
+/* Stats comparison */
+.statsSection {
+  padding: 16px 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.statsTitle {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.statCompareRow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.statBarLeft {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.statBarRight {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.statBarFill {
+  height: 7px;
+  border-radius: var(--radius-full);
+  transition: width var(--transition-normal);
+}
+
+.statBarFillLeft {
+  background-color: hsl(221, 84%, 66%);
+}
+
+.statBarFillRight {
+  background-color: hsl(26, 85%, 56%);
+}
+
+.statBarFill.winner {
+  filter: brightness(1.2);
+  box-shadow: 0 0 6px currentColor;
+}
+
+.statLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: center;
+  min-width: 70px;
+}
+
+.statNum {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.statNum.higherVal {
+  color: var(--success-color);
+}
+
+.removeBtn {
+  margin-top: 8px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: underline;
+  transition: color var(--transition-fast);
+}
+
+.removeBtn:hover {
+  color: var(--danger-color);
+}

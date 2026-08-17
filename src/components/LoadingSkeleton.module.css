@@ -1,0 +1,66 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+.card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  box-shadow: var(--shadow-sm);
+}
+
+.id {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 40px;
+  height: 16px;
+  border-radius: var(--radius-sm);
+}
+
+.favorite {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-top: 24px;
+  margin-bottom: 20px;
+}
+
+.name {
+  width: 60%;
+  height: 24px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 16px;
+}
+
+.typesContainer {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  width: 100%;
+}
+
+.typeBadge {
+  width: 70px;
+  height: 24px;
+  border-radius: var(--radius-full);
+}

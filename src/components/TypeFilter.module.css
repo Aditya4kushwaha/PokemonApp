@@ -1,0 +1,88 @@
+.typeColors {
+  --type-color-normal: hsl(63, 18%, 57%);
+  --type-color-fire: hsl(26, 85%, 56%);
+  --type-color-water: hsl(221, 84%, 66%);
+  --type-color-electric: hsl(48, 93%, 50%);
+  --type-color-grass: hsl(97, 54%, 45%);
+  --type-color-ice: hsl(178, 49%, 55%);
+  --type-color-fighting: hsl(2, 66%, 46%);
+  --type-color-poison: hsl(301, 45%, 44%);
+  --type-color-ground: hsl(43, 68%, 55%);
+  --type-color-flying: hsl(256, 82%, 65%);
+  --type-color-psychic: hsl(342, 93%, 60%);
+  --type-color-bug: hsl(67, 75%, 38%);
+  --type-color-rock: hsl(50, 54%, 46%);
+  --type-color-ghost: hsl(266, 27%, 47%);
+  --type-color-dragon: hsl(258, 98%, 60%);
+  --type-color-steel: hsl(240, 16%, 65%);
+  --type-color-dark: hsl(24, 23%, 36%);
+  --type-color-fairy: hsl(331, 49%, 65%);
+}
+
+.wrapper {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+
+.wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.filterRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 2px 0;
+}
+
+.pill {
+  flex-shrink: 0;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  border: 1.5px solid transparent;
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.pill:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.pill.active {
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transform: translateY(-1px);
+}
+
+.pill[data-type="all"].active { background-color: var(--accent-color); }
+.pill[data-type="normal"].active { background-color: var(--type-color-normal); }
+.pill[data-type="fire"].active { background-color: var(--type-color-fire); }
+.pill[data-type="water"].active { background-color: var(--type-color-water); }
+.pill[data-type="electric"].active { background-color: var(--type-color-electric); color: #222; }
+.pill[data-type="grass"].active { background-color: var(--type-color-grass); }
+.pill[data-type="ice"].active { background-color: var(--type-color-ice); color: #222; }
+.pill[data-type="fighting"].active { background-color: var(--type-color-fighting); }
+.pill[data-type="poison"].active { background-color: var(--type-color-poison); }
+.pill[data-type="ground"].active { background-color: var(--type-color-ground); color: #222; }
+.pill[data-type="flying"].active { background-color: var(--type-color-flying); }
+.pill[data-type="psychic"].active { background-color: var(--type-color-psychic); }
+.pill[data-type="bug"].active { background-color: var(--type-color-bug); }
+.pill[data-type="rock"].active { background-color: var(--type-color-rock); }
+.pill[data-type="ghost"].active { background-color: var(--type-color-ghost); }
+.pill[data-type="dragon"].active { background-color: var(--type-color-dragon); }
+.pill[data-type="steel"].active { background-color: var(--type-color-steel); color: #222; }
+.pill[data-type="dark"].active { background-color: var(--type-color-dark); }
+.pill[data-type="fairy"].active { background-color: var(--type-color-fairy); }
