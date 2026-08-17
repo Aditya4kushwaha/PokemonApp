@@ -276,18 +276,4 @@ The interface needed to work across different screen sizes while maintaining a c
 
 Different Pokémon types are represented using visually distinct styling to make the information easier to understand at a glance.
 
----
 
-##
-
----
-
-##
-
----
-
-##
-
----
-
-##
